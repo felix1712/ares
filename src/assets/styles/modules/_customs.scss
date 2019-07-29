@@ -1,0 +1,37 @@
+html,body{
+	margin: 0;
+	background: #fff;
+}
+
+*,
+*:before,
+*:after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
+//placeholder
+input::placeholder{
+	color: $v-grey;
+	letter-spacing: 0;
+}
+
+.card-frame{
+	border-radius: 5px;
+	background: $v-white;
+	border: 1px solid $v-light-border;
+	padding: 10px 15px;
+	box-shadow: 4px 4px 7px 4px rgba(216, 216, 216, 0.1);
+}
+
+.s-bor-bot{
+	border-bottom: 2px solid $v-second-grey;
+}
