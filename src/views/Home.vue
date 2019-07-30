@@ -3,7 +3,7 @@
   	<BaseHeader />
   	<div class="banner-slide">
   		<div class="image-banner">
-  			<!-- <img src="@/assets/images/gate.jpg" /> -->
+  			<!-- <img src="@/assets/images/gate.png" /> -->
   		</div>
   		<div class="text-banner">
   			<h3>Type 39</h3>
@@ -28,7 +28,7 @@
 		  			</p>
 		  		</div>
 		  		<div class="col-6 s-p-0 about-image">
-		  			<!-- <img src="@/assets/images/about.jpg" /> -->
+		  			<!-- <img src="@/assets/images/about.png" /> -->
 		  		</div>
 		  	</div>
 		  </div>
@@ -161,7 +161,7 @@
 					    </div>
 				    </div>
 				    <div class="col-6 home-info-image">
-				    	<img src="@/assets/images/denah-39.jpg" />
+				    	<img src="@/assets/images/denah-39.png" />
 				    </div>
 				  </div>
 				 </template>
