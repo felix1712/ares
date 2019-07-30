@@ -3,7 +3,7 @@
   	<BaseHeader />
   	<div class="banner-slide">
   		<div class="image-banner">
-  			<!-- <img src="@/assets/images/gate.png" /> -->
+  			<img src="@/assets/images/gate.png" />
   		</div>
   		<div class="text-banner">
   			<h3>Type 39</h3>
@@ -28,7 +28,7 @@
 		  			</p>
 		  		</div>
 		  		<div class="col-6 s-p-0 about-image">
-		  			<!-- <img src="@/assets/images/about.png" /> -->
+		  			<img src="@/assets/images/about.png" />
 		  		</div>
 		  	</div>
 		  </div>
@@ -178,16 +178,33 @@
 		  	<div class="header-title">
 		  		<h5>Sales agent</h5>
 		  	</div>
-		  	<div class="row">
-		  		Location
+		  	<div class="sales-content">
+		  		<div class="sales-frame">
+		  			<img src="@/assets/images/sales-1.jpeg" />
+		  			<div class="sales-info">
+			  			<p class="sales-name">Riko Mulyadi</p>
+			  			<small>Sales Consultant</small>
+			  			<p class="sales-telp">0857 1047 0750</p>
+			  		</div>
+		  		</div>
+		  		<div class="sales-frame">
+		  			<img src="@/assets/images/sales-2.jpeg" />
+		  			<div class="sales-info">
+			  			<p class="sales-name">Doni Sasmito</p>
+			  			<small>Sales Consultant</small>
+		  				<p class="sales-telp">0877 8095 4376</p>
+			  		</div>
+		  		</div>
 		  	</div>
 		  </div>
 		</div>
+		<BaseFooter />
   </div>
 </template>
 
 <script>
-import BaseHeader from '@/components/BaseHeader/BaseHeader.vue'
+import BaseHeader from '@/components/BaseHeader/BaseHeader.vue';
+import BaseFooter from '@/components/BaseFooter/BaseFooter.vue';
 
 export default {
   name: 'home',
@@ -198,6 +215,7 @@ export default {
   },
   components: {
   	BaseHeader,
+  	BaseFooter,
   },
 };
 </script>
@@ -482,6 +500,52 @@ export default {
 						vertical-align: middle;
 					}
 				}
+	    }
+
+	    .home-sales{
+	    	.sales-content{
+	    		display: flex;
+			    flex-flow: row wrap;
+			    justify-content: center;
+		    	.sales-frame{
+		    		width: auto;
+			    	position: relative;
+			    	float: left;
+			    	padding-right: 100px;
+
+		    		img{
+		    			width: 25rem;
+		    			height: 35rem;
+		    		}
+
+		    		.sales-info{
+		    			padding: 20px 50px;
+		    			background: $v-white;
+		    			position: absolute;
+		    			top: 70%;
+		    			left: 20%;
+		    			text-align: center;
+		    			
+		    			.sales-name{
+		    				margin-bottom: 5px;
+		    				font-size: 1.3rem;
+		    			}
+		    			.small{
+		    				font-weight: 300;
+		    			}
+		    			.sales-telp{
+		    				font-weight: 500;
+		    				margin: 0;
+		    				margin-top: 15px;
+
+		    				&:before{
+		    					content: "T.";
+		    					margin-right: 15px;
+		    				}
+		    			}
+		    		}
+		    	}
+		    }
 	    }
 		}
 	}
