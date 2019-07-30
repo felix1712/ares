@@ -58,6 +58,8 @@
 		position: relative;
 		z-index: 2;
 		ul{
+			padding: 0;
+			margin: 0;
 			li{
 				list-style: none;
 				a{
