@@ -184,7 +184,7 @@
 		  			<div class="sales-info">
 			  			<p class="sales-name">Riko Mulyadi</p>
 			  			<small>Sales Consultant</small>
-			  			<p class="sales-telp">0857 1047 0750</p>
+			  			<p class="sales-telp" @click="openWa(6285710470750)">0857 1047 0750</p>
 			  		</div>
 		  		</div>
 		  		<div class="sales-frame">
@@ -192,7 +192,7 @@
 		  			<div class="sales-info">
 			  			<p class="sales-name">Doni Sasmito</p>
 			  			<small>Sales Consultant</small>
-		  				<p class="sales-telp">0877 8095 4376</p>
+		  				<p class="sales-telp" @click="openWa(6287780954376)">0877 8095 4376</p>
 			  		</div>
 		  		</div>
 		  	</div>
@@ -217,6 +217,11 @@ export default {
   	BaseHeader,
   	BaseFooter,
   },
+  methods: {
+  	openWa(data){
+  		window.open('//api.whatsapp.com/send?phone=' + data +'&text="Halo saya ingin bertanya"')
+  	}
+  }
 };
 </script>
 
@@ -537,6 +542,7 @@ export default {
 		    				font-weight: 500;
 		    				margin: 0;
 		    				margin-top: 15px;
+		    				cursor: pointer;
 
 		    				&:before{
 		    					content: "T.";
