@@ -16,9 +16,7 @@
   	</div>
   	<div class="home-content">
 		  <div class="home-about s-mw">
-		  	<div class="header-title">
-		  		<h5>Ares Residence</h5>
-		  	</div>
+		  	<BaseHeaderTitle :title="'Ares Residence'" />
 		  	<div class="row">
 		  		<div class="col-6 s-p-0 about-text">
 		  			<p>
@@ -65,9 +63,7 @@
 		  	</div>
 		  </div>
 		  <div class="home-promo-news s-mw">
-		  	<div class="header-title">
-		  		<h5>Promo & News</h5>
-		  	</div>
+		  	<BaseHeaderTitle :title="'Promo & News'" />
 		  	<div class="row">
 		  		<div class="col-4">
 		  			<img src="@/assets/images/promo-kitchen.png" />
@@ -167,17 +163,13 @@
 				 </template>
 		  </div>
 		  <div class="home-location s-mw">
-		  	<div class="header-title">
-		  		<h5>Location</h5>
-		  	</div>
+		  	<BaseHeaderTitle :title="'Location'" />
 		  	<div class="row">
 		  		Location
 		  	</div>
 		  </div>
 		  <div class="home-sales s-mw">
-		  	<div class="header-title">
-		  		<h5>Sales agent</h5>
-		  	</div>
+		  	<BaseHeaderTitle :title="'Sales Agent'" />
 		  	<div class="sales-content">
 		  		<div class="sales-frame">
 		  			<img src="@/assets/images/sales-1.jpeg" />
@@ -205,6 +197,7 @@
 <script>
 import BaseHeader from '@/components/BaseHeader/BaseHeader.vue';
 import BaseFooter from '@/components/BaseFooter/BaseFooter.vue';
+import BaseHeaderTitle from '@/components/BaseHeaderTitle/BaseHeaderTitle.vue';
 
 export default {
   name: 'home',
@@ -216,6 +209,7 @@ export default {
   components: {
   	BaseHeader,
   	BaseFooter,
+  	BaseHeaderTitle,
   },
   methods: {
   	openWa(data){
@@ -553,24 +547,6 @@ export default {
 		    	}
 		    }
 	    }
-		}
-	}
-	.header-title{
-		margin-bottom: 3rem;
-		h5{
-			font-size: 2.5rem;
-			color: $v-blue;
-			margin-bottom: 1rem;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-		}
-		&:after{
-			content: '';
-			border-bottom: 3px solid $v-second-blue;
-			width: 200px;
-			display: block;
-			position: relative;
-			margin-left: -7rem;
 		}
 	}
 </style>

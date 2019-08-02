@@ -34,7 +34,7 @@
 						<textarea placeholder="Messages" rows="3" />
 					</div>
 					<div class="col-12 submit-buton">
-						<a>Submit</a>
+						<a class="btn">Submit</a>
 					</div>
 				</div>
 			</div>
@@ -180,21 +180,6 @@
 				.submit-buton{
 					margin-top: 20px;
 					text-align: center;
-					a{
-						color: $v-blue;
-						border: 2px solid $v-blue;
-						padding: 5px 40px;
-						border-radius: 20px;
-						text-transform: uppercase;
-
-						&:hover,
-						&:active,
-						&:focus{
-							border: 2px solid $v-second-blue;
-							background: $v-second-blue;
-							color: $v-white;
-						}
-					}
 				}
 			}
 		}

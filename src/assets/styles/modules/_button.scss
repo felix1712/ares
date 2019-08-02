@@ -1,22 +1,38 @@
+ // .btn{
+ // 	padding: 7px 12px;
+	// display: inline-block;
+	// text-align: center;
+	// white-space: nowrap;
+	// vertical-align: middle;
+	// cursor: pointer;
+	// background-image: none;
+	// border: 1px solid transparent;
+	// line-height: 1.5;
+	// border-radius: 50px;
+	// color: $v-white;
+	// width: 100%;
+
+	// &.btn-small-radius {
+	// 	border-radius: 9px;
+	// }
+
+	// &.btn-primary{
+	// 	background: $v-red-linear;
+	// }
+ // }
+
  .btn{
- 	padding: 7px 12px;
-	display: inline-block;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	cursor: pointer;
-	background-image: none;
-	border: 1px solid transparent;
-	line-height: 1.5;
-	border-radius: 50px;
-	color: $v-white;
-	width: 100%;
+	color: $v-blue;
+	border: 2px solid $v-blue;
+	padding: 5px 40px;
+	border-radius: 20px;
+	text-transform: uppercase;
 
-	&.btn-small-radius {
-		border-radius: 9px;
-	}
-
-	&.btn-primary{
-		background: $v-red-linear;
+	&:hover,
+	&:active,
+	&:focus{
+		border: 2px solid $v-second-blue;
+		background: $v-second-blue;
+		color: $v-white;
 	}
  }
