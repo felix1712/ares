@@ -127,7 +127,7 @@
 			}
 			p{
 				&.text-intro{
-					font-size: 1.2rem;
+					font-size: 1rem;
 					line-height: 1.7;
 				}
 			}
@@ -135,12 +135,12 @@
 				padding: 0;
 				li{
 					display: table;
-					margin: 20px 0;
+					margin: 15px 0;
 					font-weight: 500;
 
 					span{
 						display: table-cell;
-						font-size: 1.3rem;
+						font-size: 1.1rem;
 						text-transform: capitalize;
 
 						+span{
@@ -154,7 +154,7 @@
 
 					li{
 						&:first-child{
-							margin-top:	50px;
+							margin-top:	40px;
 						}
 
 						span{
@@ -178,7 +178,7 @@
 							+span{
 								text-align: right;
 								padding-left:   0.5em;
-								font-size: 1.4rem;
+								font-size: 1.1rem;
 							}
 						}
 					}
@@ -186,7 +186,7 @@
 
 				&.property-info-full{
 					li{
-						margin: 20px 0;
+						margin: 15px 0;
 						span{
 							&:first-child{
 								text-transform: uppercase;
@@ -205,7 +205,7 @@
 							+span{
 								text-align: left;
 								padding-left: 1rem;
-								font-size: 1.2rem;
+								font-size: 1rem;
 								width: auto;
 							}
 						}
@@ -218,13 +218,13 @@
 				width: 100%;
 				height: auto;
 				vertical-align: middle;
-				max-height: 65rem;
+				max-height: 53rem;
 			}
 		}
 		.property-siteplan{
 			margin-top: 100px;
 			.zoomer-image{
-				min-height: 75rem;
+				min-height: 55rem;
 			}
 		}
 	}
