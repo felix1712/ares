@@ -80,25 +80,63 @@
 					</ul>
 				</div>
 				<div class="col-7 property-plan">
-					<img src="@/assets/images/denah-39.png" />
+					<!-- <img src="@/assets/images/denah-39.png" /> -->
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-12 property-siteplan">
-					<ZoomerImage 
+					<!-- <ZoomerImage 
 						:imgZoom="siteplan"
 						:imgNormal="siteplan"
-					/>
+					/> -->
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-12 property-image">
+					<carousel 
+						:nav="false"
+						:dots="false"
+						:mouseDrag="false"
+					>
+						<template slot="prev">
+							<i class="arrow left"></i>
+						</template>
+				    <img src="https://placeimg.com/200/200/any?1" @click="imageFull">
+				    <img src="https://placeimg.com/200/200/any?2" @click="imageFull">
+				    <img src="https://placeimg.com/200/200/any?3" @click="imageFull">
+				    <img src="https://placeimg.com/200/200/any?4" @click="imageFull">
+					  <template slot="next">
+					  	<i class="arrow right"></i>
+					  </template>
+					</carousel>
+				</div>
+			</div>
+			<BaseFooter />
 		</div>
+
+		<!-- modal -->
+		<BaseModal
+			v-if="showModal"
+			@close="closeModal"
+		>
+			<template slot="body">
+				<div class="modal-image">
+					<!-- <i class="arrow left"></i> -->
+					<img :src="modalImage">
+					<!-- <i class="arrow right"></i> -->
+				</div>
+			</template>
+		</BaseModal>
 	</div>
 </template>
 
 <script>
 	import BaseHeaderTitle from '@/components/BaseHeaderTitle/BaseHeaderTitle.vue';
+	import BaseModal from '@/components/BaseModal/BaseModal.vue';
+	import BaseFooter from '@/components/BaseFooter/BaseFooter.vue';
 	import ZoomerImage from '@/components/ZoomerImage/ZoomerImage.vue';
 	import siteplan from '@/assets/images/siteplan.png';
+	import carousel from 'vue-owl-carousel'
 	export default{
 		name: 'Property',
 		data() {
@@ -106,13 +144,25 @@
 				siteplan,
 				sitePos: '',
 				siteBackground: '',
+				showModal: false,
+				modalImage: '',
 			}
 		},
 		methods: {
+			imageFull(){
+				this.modalImage = event.currentTarget.src;
+				this.showModal = true;
+			},
+			closeModal(){
+				this.showModal = false;
+			},
 		},
 		components: {
 			BaseHeaderTitle,
-			ZoomerImage
+			BaseModal,
+			BaseFooter,
+			ZoomerImage,
+			carousel
 		}
 	}
 </script>
@@ -120,6 +170,12 @@
 <style lang="scss">
 	@import "@/assets/styles/modules/_variable.scss";
 	.property{
+		.arrow{
+			position: absolute;
+			top: 50%;
+			cursor: pointer;
+			z-index: 9;
+		}
 		.property-info{
 			h2{
 				font-size: 1.5rem;
@@ -225,6 +281,48 @@
 			margin-top: 100px;
 			.zoomer-image{
 				min-height: 55rem;
+			}
+		}
+		.property-image{
+			.owl-stage-outer{
+				img{
+					padding:0 20px;
+					height: 20rem;
+					&:after{
+						content: "";
+						background-color: rgba($v-blue, .35);
+						height: 20rem;
+						width: 100%;
+						display: block;
+					}
+				}
+			}
+			.arrow{
+
+				&.left{
+					left: 0;
+				}
+				&.right{
+					right: 0;
+				}
+			}
+		}
+
+		.modal-image{
+			text-align: center;
+			.arrow{
+				&.left{
+					left: 15%;
+				}
+				&.right{
+					right: 15%;
+				}
+			}
+			img{
+				width: 50%;
+				height: auto;
+				max-width: 70vw;
+				max-height: 70vh;
 			}
 		}
 	}
