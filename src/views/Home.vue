@@ -5,10 +5,12 @@
   		<div class="image-banner">
   			<img src="@/assets/images/gate.png" />
   		</div>
-  		<div class="text-banner">
-  			<h3>Type 39</h3>
-  			<p>Tipe 39 adalah rumah minimalis yang sangat cocok untuk keluarga kecil yang baru memliki buah hati</p>
-  		</div>
+	  	<transition name="slide-bottom" appear mode="out-in">
+	  		<div class="text-banner">
+	  			<h3>Type 39</h3>
+	  			<p>Tipe 39 adalah rumah minimalis yang sangat cocok untuk keluarga kecil yang baru memliki buah hati</p>
+	  		</div>
+  		</transition>
   	</div>
   	<div class="arrow-scroll">
   		<div class="line"></div>
@@ -18,48 +20,56 @@
 		  <div class="home-about s-mw">
 		  	<BaseHeaderTitle :title="'Ares Residence'" />
 		  	<div class="row">
-		  		<div class="col-6 s-p-0 about-text">
-		  			<p>
-		  				Ares Residence adalah sebuah kawasan hunian modern di tengah Kota Rangkasbitung. Di desain dengan gaya modern minimalis, perumahan Ares Residence memiliki konsep One Gate System dan dilengkapi dengan berbagai fasilitas terbaik di kelasnya. 
-		  				<br>
-		  				Ares Residence memiliki 2 tipe hunian dan di desain dengan prinsip hijau dan asri untuk mengoptimalkan kenyamanan kehidupan anda.
-		  			</p>
-		  		</div>
-		  		<div class="col-6 s-p-0 about-image">
-		  			<img src="@/assets/images/about.png" />
-		  		</div>
+		  		<transition name="slide-right" appear mode="out-in">
+			  		<div class="col-6 s-p-0 about-text">
+			  			<p>
+			  				Ares Residence adalah sebuah kawasan hunian modern di tengah Kota Rangkasbitung. Di desain dengan gaya modern minimalis, perumahan Ares Residence memiliki konsep One Gate System dan dilengkapi dengan berbagai fasilitas terbaik di kelasnya. 
+			  				<br>
+			  				Ares Residence memiliki 2 tipe hunian dan di desain dengan prinsip hijau dan asri untuk mengoptimalkan kenyamanan kehidupan anda.
+			  			</p>
+			  		</div>
+			  	</transition>
+		  		<transition name="fade" appear mode="out-in">
+			  		<div class="col-6 s-p-0 about-image">
+			  			<img src="@/assets/images/about.png" />
+			  		</div>
+			  	</transition>
 		  	</div>
 		  </div>
 		  <div class="home-benefit">
 		  	<div class="s-container">
-		  		<div class="row">
-		  			<div class="col-4">
-		  				<img src="@/assets/images/feature-location.png" />
-		  				<p>Strategic Location</p>
-		  			</div>
-		  			<div class="col-4">
-		  				<img src="@/assets/images/feature-mosque.png" />
-		  				<p>Mosque</p>
-		  			</div>
-		  			<div class="col-4">
-		  				<img src="@/assets/images/feature-train.png" />
-		  				<p>Train Access</p>
-		  			</div>
-		  		</div>
-		  		<div class="row">
-		  			<div class="col-4">
-		  				<img src="@/assets/images/feature-hospital.png" />
-		  				<p>Near Hospital</p>
-		  			</div>
-		  			<div class="col-4">
-		  				<img src="@/assets/images/feature-school.png" />
-		  				<p>near school</p>
-		  			</div>
-		  			<div class="col-4">
-		  				<img src="@/assets/images/feature-mall.png" />
-		  				<p>Near Mall</p>
-		  			</div>
-		  		</div>
+		  		<transition name="fade" appear mode="out-in">
+		  			<div>
+				  		<div class="row">
+				  			<div class="col-4">
+				  				<img src="@/assets/images/feature-location.png" />
+				  				<p>Strategic Location</p>
+				  			</div>
+				  			<div class="col-4">
+				  				<img src="@/assets/images/feature-mosque.png" />
+				  				<p>Mosque</p>
+				  			</div>
+				  			<div class="col-4">
+				  				<img src="@/assets/images/feature-train.png" />
+				  				<p>Train Access</p>
+				  			</div>
+				  		</div>
+				  		<div class="row">
+				  			<div class="col-4">
+				  				<img src="@/assets/images/feature-hospital.png" />
+				  				<p>Near Hospital</p>
+				  			</div>
+				  			<div class="col-4">
+				  				<img src="@/assets/images/feature-school.png" />
+				  				<p>near school</p>
+				  			</div>
+				  			<div class="col-4">
+				  				<img src="@/assets/images/feature-mall.png" />
+				  				<p>Near Mall</p>
+				  			</div>
+				  		</div>
+				  	</div>
+			  	</transition>
 		  	</div>
 		  </div>
 		  <div class="home-promo-news s-mw">
@@ -83,13 +93,18 @@
 		  	</div>
 		  </div>
 		  <div class="home-info s-mw">
-		  	<div class="frame-tabs">
-			  	<input class="custom-tabs" id="type1" value="type1" type="radio" name="tabs" v-model="tabModel">
-				  <label class="label-tabs" for="type1">Tipe 39</label>
-
-				  <input class="custom-tabs" id="type2" value="type2" type="radio" name="tabs" v-model="tabModel">
-				  <label class="label-tabs" for="type2">Tipe 49</label>
-				 </div>
+		  	<div class="tabs-container">
+			  	<template v-for="(item, index) in tabData">
+				  	<BaseTabs
+							:radioId="item.name"
+							:radioName="'type'"
+							:radioValue="'type'+item.id"
+							:labelRadio="item.name"
+							:picked="'type'+tabData[0].id"
+							v-model="tabModel"
+						/>
+					</template>
+				</div>
 
 				 <template v-for="(info, index) in 2">
 				  <div class="row s-mt-70" v-show="tabModel === 'type'+(index+1)">
@@ -198,18 +213,30 @@
 import BaseHeader from '@/components/BaseHeader/BaseHeader.vue';
 import BaseFooter from '@/components/BaseFooter/BaseFooter.vue';
 import BaseHeaderTitle from '@/components/BaseHeaderTitle/BaseHeaderTitle.vue';
+import BaseTabs from '@/components/BaseTabs/BaseTabs.vue';
 
 export default {
   name: 'home',
   data() {
   	return {
   		tabModel: 'type1',
+  		tabData: [
+				{
+					id: 1,
+					name: 'Type 39',
+				},
+				{
+					id: 2,
+					name: 'Type 49'
+				}
+			]
   	};
   },
   components: {
   	BaseHeader,
   	BaseFooter,
   	BaseHeaderTitle,
+  	BaseTabs,
   },
   methods: {
   	openWa(data){
@@ -399,44 +426,9 @@ export default {
 
 	    .home-info{
 	    	margin-top: 100px;
-	    	.frame-tabs{
-	    		width: 100%;
-	    		text-align: center;
-
-		    	.custom-tabs{
-		    		display: none;
-		    	}
-
-		    	.label-tabs{
-					  display: inline-block;
-					  padding: 15px 30px;
-					  font-family: 'Avenir';
-					  text-transform: uppercase;
-					  text-align: center;
-					  color: $v-blue;
-
-					  &:hover{
-						  	&:after{
-						  	content: '';
-						    border-bottom: 3px solid #029FAA;
-						    width: 50px;
-						    display: block;
-						    position: relative;
-						    margin: 10px auto 0 auto;
-						  }
-					  }
-		    	}
-
-		    	.custom-tabs:checked + .label-tabs {
-					  &:after{
-					  	content: '';
-					    border-bottom: 3px solid #029FAA;
-					    width: 50px;
-					    display: block;
-					    position: relative;
-					    margin: 10px auto 0 auto;
-					  }
-					}
+	    	.tabs-container{
+					width: 100%;
+					text-align: center;
 				}
 				.home-info-text{
 					.header-info{

@@ -64,3 +64,15 @@ i {
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 }
+
+.hidden {
+  opacity: 0;
+}
+
+.hidden-right {
+  transform: translate(50px, 0);
+}
+
+.hidden-left {
+  transform: translate(-50px, 0);
+}

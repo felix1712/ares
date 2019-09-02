@@ -5,38 +5,40 @@
 				<img src="@/assets/images/main-logo.png">
 			</div>
 			<div class="menu-list">
-				<ul>
-					<li>
-						<a>
-							About
-						</a>
-					</li>
-					<li>
-						<a>
-							promo & news
-						</a>
-					</li>
-					<li>
-						<a>
-							property
-						</a>
-					</li>
-					<li>
-						<a>
-							our sales
-						</a>
-					</li>
-					<li>
-						<a>
-							location
-						</a>
-					</li>
-					<li>
-						<a>
-							contact us
-						</a>
-					</li>
-				</ul>
+				<transition name="slide-top" appear mode="out-in">
+					<ul>
+						<li>
+							<a>
+								About
+							</a>
+						</li>
+						<li>
+							<a>
+								promo & news
+							</a>
+						</li>
+						<li>
+							<a>
+								property
+							</a>
+						</li>
+						<li>
+							<a>
+								our sales
+							</a>
+						</li>
+						<li>
+							<a>
+								location
+							</a>
+						</li>
+						<li>
+							<a>
+								contact us
+							</a>
+						</li>
+					</ul>
+				</transition>
 			</div>
 		</div>
 		<div class="header-fix" :class="{'is-show': !scrolled}">

@@ -1,5 +1,5 @@
 <template>
-	<div class="header-title">
+	<div class="header-title hidden" v-infocus="'show-element'">
 		<h5>{{title}}</h5>
 	</div>
 </template>
